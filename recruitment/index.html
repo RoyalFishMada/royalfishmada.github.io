@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement - Royal Fish Mada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background-color: #0b3c5d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            color: #d9b310;
+        }
+        
+        #recrutement {
+            padding: 80px 20px;
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+        
+        #recrutement > div {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-label {
+            color: #d9b310;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+        
+        #recrutement h2 {
+            color: #0b3c5d;
+            font-size: 32px;
+            margin: 10px 0 15px 0;
+            font-weight: 700;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 4px;
+            background-color: #d9b310;
+            margin: 0 auto 30px auto;
+            border-radius: 2px;
+        }
+        
+        .intro-text {
+            color: #555555;
+            font-size: 17px;
+            max-width: 750px;
+            margin: 0 auto 50px auto;
+            line-height: 1.6;
+        }
+        
+        .offres-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .job-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            width: 300px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .job-card.primary {
+            border-top: 5px solid #0b3c5d;
+        }
+        
+        .job-card.secondary {
+            border-top: 5px solid #d9b310;
+        }
+        
+        .job-tag {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .job-tag.primary {
+            background: #e6f0fa;
+            color: #0b3c5d;
+        }
+        
+        .job-tag.secondary {
+            background: #fdf5e6;
+            color: #d9b310;
+        }
+        
+        .job-card h3 {
+            color: #0b3c5d;
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .job-info {
+            font-size: 14px;
+            color: #777777;
+            margin-bottom: 15px;
+        }
+        
+        .job-description {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .apply-btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .apply-btn.primary {
+            background: #0b3c5d;
+            color: white;
+        }
+        
+        .apply-btn.primary:hover {
+            background: #0a2d47;
+        }
+        
+        .apply-btn.secondary {
+            background: #d9b310;
+            color: #0b3c5d;
+        }
+        
+        .apply-btn.secondary:hover {
+            background: #c9a310;
+        }
+        
+        .footer-text {
+            color: #666666;
+            font-size: 15px;
+        }
+        
+        .footer-text a {
+            color: #0b3c5d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background-color: #0b3c5d;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: #d9b310;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            #recrutement h2 {
+                font-size: 24px;
+            }
+            
+            .offres-container {
+                gap: 20px;
+            }
+            
+            .job-card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recrutement</h1>
+        <p>Rejoignez l'aventure Royal Fish Mada</p>
+    </header>
+
+    <section id="recrutement">
+        <div>
+            <span class="section-label">Opportunités de Carrière</span>
+            <h2>Rejoignez l'Équipe de Royal Fish Mada</h2>
+            <div class="divider"></div>
+            
+            <p class="intro-text">
+                Dans le cadre du développement de nos 2 cycles piscicoles annuels et de notre future écloserie à <strong>Andranomanelatra</strong>, la SARL structure son équipe managériale. Nous recherchons des talents rigoureux pour propulser le meilleur du poisson Malagasy.
+            </p>
+
+            <div class="offres-container">
+                
+                <div class="job-card primary">
+                    <div>
+                        <span class="job-tag primary">Technique & Terrain</span>
+                        <h3>Responsable de Production</h3>
+                        <p class="job-info">📍 Exploitation Andranomanelatra<br>⏱️ Plein temps (CDI)</p>
+                        <p class="job-description">
+                            Garant du suivi des bassins, des ratios d'alimentation (Arbiocheme/provendes) et de la croissance optimale du cheptel.
+                        </p>
+                    </div>
+                    <a href="mailto:contact.royalfishmada@gmail.com?subject=Candidature%20-%20Responsable%20de%20Production%20RFM" class="apply-btn primary">Postuler au poste</a>
+                </div>
+
+                <div class="job-card secondary">
+                    <div>
+                        <span class="job-tag secondary">Ventes & Marketing</span>
+                        <h3>Responsable Commercial</h3>
+                        <p class="job-info">📍 Antsirabe / Axe RN7<br>⏱️ Plein temps (CDI)</p>
+                        <p class="job-description">
+                            En charge du développement du portefeuille clients (restaurateurs, grossistes), des livraisons et de la communication digitale.
+                        </p>
+                    </div>
+                    <a href="mailto:contact.royalfishmada@gmail.com?subject=Candidature%20-%20Responsable%20Commercial%20RFM" class="apply-btn secondary">Postuler au poste</a>
+                </div>
+
+                <div class="job-card primary">
+                    <div>
+                        <span class="job-tag primary">Gestion & Finance</span>
+                        <h3>Comptable de la SARL</h3>
+                        <p class="job-info">📍 Bureau d'Antsirabe<br>⏱️ Temps partiel / Plein temps</p>
+                        <p class="job-description">
+                            Gestion rigoureuse de la trésorerie des cycles, suivi des factures fournisseurs d'intrants et déclarations de la société.
+                        </p>
+                    </div>
+                    <a href="mailto:contact.royalfishmada@gmail.com?subject=Candidature%20-%20Comptable%20RFM" class="apply-btn primary">Postuler au poste</a>
+                </div>
+
+            </div>
+
+            <p class="footer-text">
+                Chaque candidature doit inclure un CV et une lettre de motivation adressés à la Direction.<br>
+                Adresse e-mail officielle : <a href="mailto:contact.royalfishmada@gmail.com">contact.royalfishmada@gmail.com</a>
+            </p>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Royal Fish Mada SARL</p>
+        <p>Andranomanelatra (Antsirabe), Madagascar</p>
+        <p><a href="mailto:contact.royalfishmada@gmail.com">contact.royalfishmada@gmail.com</a></p>
+    </footer>
+</body>
+</html>
