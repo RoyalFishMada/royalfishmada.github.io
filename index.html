@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Fish Mada - Aquaculture de Qualité</title>
+    <style>
+        /* --- LE CSS : Le Design et les Couleurs --- */
+        
+        /* Initialisation générale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fbfd;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* En-tête mis à jour avec les couleurs exactes du logo */
+        header {
+            background-color: #122234; /* Le bleu nuit profond du fond du logo */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            color: #E2C573; /* Doré principal */
+            margin-bottom: 5px;
+        }
+
+        /* L'effet "Or Métallique" pour le slogan */
+        .slogan-or {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            /* Le secret du dégradé Or sur du texte : */
+            background: linear-gradient(to bottom, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        header p {
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Section Principale (Hero) */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(11, 60, 93, 0.1), rgba(50, 140, 190, 0.1));
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: #0b3c5d;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+        }
+
+        /* Zone des Produits (Les Cartes) */
+        .produits-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* S'adapte sur mobile */
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .carte-poisson {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 320px;
+            padding: 25px;
+            text-align: center;
+            border-top: 5px solid #328cc1; /* Bleu Cyan */
+            transition: transform 0.3s;
+        }
+
+        .carte-poisson:hover {
+            transform: translateY(-5px); /* Petit effet dynamique */
+        }
+
+        .carte-poisson h3 {
+            color: #0b3c5d;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            background-color: #e2f0fd;
+            color: #0b3c5d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Bouton d'action principal */
+        .btn-commande {
+            display: inline-block;
+            background-color: #328cc1;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(50, 140, 190, 0.3);
+            transition: background 0.3s;
+        }
+
+        .btn-commande:hover {
+            background-color: #0b3c5d; /* Devient bleu foncé au survol */
+        }
+		/* Style mis à jour pour agrandir le logo */
+        .logo-site {
+            max-width: 220px;    /* Augmenté de 160px à 220px pour un rendu plus visible */
+            height: auto;        /* Conserve les proportions parfaites du cercle */
+            display: block;      /* Indispensable pour le centrage */
+            margin: 0 auto 15px auto; /* Reste parfaitement centré au milieu du header */
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #0b3c5d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+		/* Style pour la section de présentation des produits */
+        .section-produits {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .titre-section {
+            text-align: center;
+            color: #0b3c5d;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .titre-section::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #328cc1;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Tableau des spécifications des produits */
+        .tableau-produits {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .tableau-produits th, .tableau-produits td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .tableau-produits th {
+            background-color: #0b3c5d;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tableau-produits tr:nth-child(even) {
+            background-color: #f4f8fb;
+        }
+
+        .tableau-produits tr:hover {
+            background-color: #eaf3f9;
+        }
+
+        .dispo {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+		/* Style pour les images à l'intérieur des fiches produits */
+		.image-produit {
+			width: 100%;          /* L'image prend toute la largeur de la carte */
+			height: 180px;        /* Hauteur fixe pour que les deux cartes soient alignées */
+			object-fit: cover;    /* Aligne et coupe l'image proprement sans la déformer */
+			border-radius: 8px;   /* Arrondit les angles de la photo */
+			margin-bottom: 15px;  /* Crée un espace sous la photo avant le texte */
+			
+		}
+		/* Section Vente d'Alevins */
+        .section-alevins {
+            background-color: #f0f4f8;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .section-alevins h2 {
+            color: #0b3c5d;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-alevins .sous-titre {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: #555;
+        }
+
+        .carte-alevin {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 340px;
+            padding: 25px;
+            text-align: left;
+            border-left: 5px solid #2e7d32; /* Vert pour la croissance/élevage */
+        }
+
+        .carte-alevin h3 {
+            color: #0b3c5d;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .carte-alevin ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .carte-alevin ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .carte-alevin ul li::before {
+            content: "• ";
+            color: #2e7d32;
+            font-weight: bold;
+        }
+		/* L'effet "Or Métallique" ET Calligraphique pour le slogan */
+        .slogan-or {
+            font-family: 'Monotype Corsiva', cursive, sans-serif; /* La police du logo ! */
+            font-size: 2.0rem; /* Augmenté car les polices script écrivent plus petit */
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            display: inline-block;
+            
+            /* Le dégradé Or sur le texte */
+            background: linear-gradient(to bottom, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+		/* Bouton d'action secondaire pour l'E-mail */
+        .btn-email {
+            display: inline-block;
+            background-color: transparent;
+            color: #0b3c5d;
+            border: 2px solid #0b3c5d;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-left: 15px; /* Espace avec le bouton WhatsApp */
+            transition: all 0.3s;
+        }
+
+        .btn-email:hover {
+            background-color: #0b3c5d;
+            color: white; /* Devient bleu foncé avec texte blanc au survol */
+        }
+    </style>
+	<link href="https://fonts.googleapis.com/css2?family=Monotype+Corsiva&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="logo-rfm.png" alt="Logo Royal Fish Mada" class="logo-site">
+        
+        <h1>ROYAL FISH MADA</h1>
+        <p class="slogan-or">Le meilleur du poisson Malagasy</p>
+    </header>
+
+    <section class="hero">
+        <h2>Une Aquaculture Moderne à Andranomanelatra</h2>
+        <p>Producteur spécialisé de poissons d'eau douce de qualité supérieure. Nous garantissons une fraîcheur absolue et des normes d'élevage rigoureuses pour les professionnels et les marchés de la région Vakinankaratra.</p>
+        
+        <div class="produits-container">
+            
+            <div class="carte-poisson">
+                <h3>Tilapia Royal</h3>
+                <span class="badge">Sélection Monosexe</span>
+                 <img src="tilapia.jpg" alt="Tilapia Royal RFM" class="image-produit">
+				<p>Élevé dans une eau pure et calibré avec soin, notre Tilapia Royal offre une chair blanche, ferme et savoureuse, idéale pour les grandes tables.</p>
+            </div>
+
+            <div class="carte-poisson">
+                <h3>Carpe Royale</h3>
+                <span class="badge">Souche d'Élevage</span>
+                <img src="carpe.jpg" alt="Carpe Royale RFM" class="image-produit">
+				<p>Issue de souches robustes et sélectionnées, notre Carpe Royale est un poisson massif au goût délicat, très apprécié sur les marchés des Hautes Terres.</p>
+            </div>
+
+        </div>
+	</section>
+
+    <section class="section-produits">
+        <h2 class="titre-section">Disponibilités et Formats de Vente</h2>
+        
+        <p style="text-align: center; margin-bottom: 30px; color: #555;">
+            Tous nos poissons sont issus d'un élevage éco-responsable à Andranomanelatra et sont pêchés à la demande pour garantir une fraîcheur absolue.
+        </p>
+
+        <table class="tableau-produits">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Variété / Souche</th>
+                    <th>Calibre / Poids moyen</th>
+                    <th>État</th>
+                    <th>Disponibilité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tilapia Royal</strong></td>
+                    <td>Oreochromis niloticus (Monosexe Mâle)</td>
+                    <td>300g à 500g</td>
+                    <td>Frais / Entier</td>
+                    <td class="dispo">✓ En Stock</td>
+                </tr>
+                <tr>
+                    <td><strong>Carpe Royale</strong></td>
+                    <td>Cyprinus carpio (Carpe Commune)</td>
+                    <td>500g à +1.5kg</td>
+                    <td>Frais / Entier</td>
+                    <td class="dispo">✓ En Stock</td>
+                </tr>
+                <tr>
+                    <td><strong>Alevins Tilapia</strong></td>
+                    <td>Pour grossissement (Pisciculteurs)</td>
+                    <td>5g à 10g</td>
+                    <td>Vivant</td>
+                    <td class="dispo">Sur commande</td>
+                </tr>
+                <tr>
+                    <td><strong>Alevins Carpe</strong></td>
+                    <td>Souche d'élevage sélectionnée</td>
+                    <td>5g à 15g</td>
+                    <td>Vivant</td>
+                    <td class="dispo">Sur commande</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+	<section id="commande-rapide" style="padding: 60px 20px; background-color: #ffffff; font-family: 'Segoe UI', Arial, sans-serif;">
+    <div style="max-width: 600px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(11, 60, 93, 0.08); border: 1px solid #e6f0fa;">
+        
+        <h3 style="color: #0b3c5d; text-align: center; font-size: 24px; margin-bottom: 5px; font-weight: 700;">Passer une Commande Rapide</h3>
+        <p style="color: #777777; text-align: center; font-size: 14px; margin-bottom: 30px;">Configurez votre demande, notre équipe vous contactera pour la livraison.</p>
+
+        <form id="rfmForm">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Espèce / Souche choisie :</label>
+                <select id="souche" style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; color: #333; outline: none; transition: 0.3s;">
+                    <option value="Tilapia Royal 🐟">Tilapia Royal — Poisson de table / Alevins</option>
+                    <option value="Carpe Royale 🐠">Carpe Royale — Poisson de table / Alevins</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Quantité souhaitée (en kg ou nombre d'alevins) :</label>
+                <input type="text" id="quantite" placeholder="Ex: 50 kg ou 200 alevins" required style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none;">
+            </div>
+
+            <div style="margin-bottom: 30px; text-align: center;">
+                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 12px; font-size: 14px;">Envoyer ma commande via :</label>
+                
+                <input type="radio" id="canalWhatsApp" name="canal" value="whatsapp" checked style="margin-right: 5px;">
+                <label for="canalWhatsApp" style="color: #25D366; font-weight: bold; margin-right: 20px; cursor: pointer;">🟢 WhatsApp</label>
+                
+                <input type="radio" id="canalMail" name="canal" value="email" style="margin-right: 5px;">
+                <label for="canalMail" style="color: #0b3c5d; font-weight: bold; cursor: pointer;">📩 Email</label>
+            </div>
+
+            <button type="button" onclick="envoyerCommande()" style="width: 100%; padding: 15px; background-color: #0b3c5d; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(11, 60, 93, 0.2); transition: 0.3s;">
+                🚀 Valider et Envoyer ma Commande
+            </button>
+        </form>
+    </div>
+	</section>
+
+	<script>
+	function envoyerCommande() {
+		// 1. Récupération des données du formulaire
+		const souche = document.getElementById('souche').value;
+		const quantite = document.getElementById('quantite').value;
+		const canal = document.querySelector('input[name="canal"]:checked').value;
+
+		if (!quantite.trim()) {
+			alert("Veuillez préciser la quantité s'il vous plaît.");
+			return;
+		}
+
+		// 2. Configuration de vos coordonnées de réception (À MODIFIER AVEC VOS INFOS)
+		const numeroWhatsApp = "261XXXXXXXXX"; // Mettez votre numéro sans le 0 (Ex: 261340000000)
+		const emailAvenir = "contact.royalfishmada@gmail.com";
+
+		// 3. Construction du texte automatique du message
+		const sujet = "Nouvelle commande via le site Web RFM";
+		const messageTexte = `Bonjour Royal Fish Mada ! Je souhaite passer une commande via le site web :\n\n• Souche : ${souche}\n• Quantité : ${quantite}\n\nMerci de me recontacter pour finaliser les détails et la livraison.`;
+
+		// 4. Redirection selon le choix du client
+		if (canal === "whatsapp") {
+			// Encodage spécial pour WhatsApp
+			const lienWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messageTexte)}`;
+			window.open(lienWhatsApp, '_blank');
+		} else {
+			// Encodage spécial pour l'application Mail
+			const lienMail = `mailto:${emailAvenir}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(messageTexte)}`;
+			window.location.href = lienMail;
+		}
+	}
+	</script>
+	<section class="section-alevins">
+        <h2>Espace Pisciculteurs : Semences de Qualité</h2>
+        <p class="sous-titre">Vous vous lancez dans la pisciculture ou la rizipisciculture ? RFM vous fournit des alevins vigoureux, triés sur le volet et parfaitement adaptés au climat des Hautes Terres.</p>
+
+        <div class="produits-container">
+
+            <div class="carte-alevin">
+                <h3>Alevins Tilapia Royal</h3>
+                <img src="alevin-tilapia.jpg" alt="Alevins de Tilapia RFM" class="image-produit">
+                <ul>
+                    <li><strong>Garantie :</strong> Souche pure sélectionnée</li>
+                    <li><strong>Taux de mâles :</strong> ~99% (Inversion hormonale maîtrisée)</li>
+                    <li><strong>Poids moyen :</strong> 5g à 10g (Stade optimal)</li>
+                    <li><strong>Avantage :</strong> Pas de surpopulation en étang, croissance explosive.</li>
+                </ul>
+            </div>
+
+            <div class="carte-alevin">
+                <h3>Alevins Carpe Royale</h3>
+                <img src="alevin-carpe.png" alt="Alevins de Carpe Royale RFM" class="image-produit">
+                <ul>
+                    <li><strong>Garantie :</strong> Vraie Carpe Commune d'élevage (*Cyprinus carpio*)</li>
+                    <li><strong>Rusticité :</strong> Résistance totale aux hivers d'Antsirabe</li>
+                    <li><strong>Poids moyen :</strong> 5g à 15g</li>
+                    <li><strong>Avantage :</strong> Idéal pour la polyculture et le nettoyage des fonds d'étangs.</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <p style="margin-top: 30px; font-style: italic; color: #666; font-size: 0.95rem;">
+            * Conditionnement sécurisé en sacs d'oxygène pour le transport vers vos exploitations.
+        </p>
+    </section>
+
+    <section style="text-align: center; padding: 60px 20px; background-color: #f9f9f9;">
+        <h2 style="color: #0b3c5d; font-size: 2rem; margin-bottom: 20px;">Rejoignez l'Équipe RFM !</h2>
+        <p style="max-width: 700px; margin: 0 auto 30px auto; color: #555;">
+            Vous êtes passionné par l'aquaculture ? Consultez nos offres d'emploi et postulez pour rejoindre notre équipe à Andranomanelatra.
+        </p>
+        <a href="recruitment/" style="display: inline-block; background-color: #0b3c5d; color: white; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 10px rgba(11,60,93,0.3); transition: 0.3s;">
+            Voir les Offres de Recrutement
+        </a>
+    </section>
+	<section style="text-align: center; padding: 60px 20px; background-color: #f9f9f9;">	
+		<a href="https://wa.me/261388132964?text=Bonjour%20Royal%20Fish%20Mada,%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20poissons." class="btn-commande">Nous contacter via WhatsApp</a>
+
+		<a href="mailto:contact.royalfishmada@gmail.com?subject=Demande%20d'informations%20-%20RFM" class="btn-email">Nous contacter par E-mail</a>
+    <p style="max-width: 700px; margin: 0 auto 30px auto; color: #555;">
+            Veuillez nous contacter pour avoir plus d'informations sur nos produits.
+        </p>
+	</section>
+
+	<footer>
+        <p>&copy; 2026 Royal Fish Mada SARL - Andranomanelatra, Antsirabe 110, Madagascar.</p>
+    </footer>
+
+</body>
+</html>
