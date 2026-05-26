@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Fish Mada</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }body {
+  background: #f5f9fc;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #005B7A, #00A8C8);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #dff7ff;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #005B7A;
+  font-size: 32px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.product-price {
+  color: #00A8C8;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.step {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid #00A8C8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: auto;
+}
+
+footer {
+  background: #005B7A;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+@media(max-width:768px){
+  section {
+    padding: 40px 6%;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+  </style>
+</head>
+<body>  <header>
+    <h1>Royal Fish Mada</h1>
+    <p>Pisciculture moderne et durable à Madagascar</p><nav>
+  <a href="#about">À propos</a>
+  <a href="#products">Produits</a>
+  <a href="#process">Production</a>
+  <a href="#gallery">Galerie</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+  </header>  <!-- À propos -->  <section id="about">
+    <h2 class="section-title">À propos de nous</h2><div class="card">
+  <p>
+    Royal Fish Mada (RFM) est une entreprise piscicole malagasy spécialisée dans
+    l’élevage et la commercialisation de poissons frais de qualité.
+  </p>
+
+  <br>
+
+  <p>
+    Notre mission est de contribuer au développement de la pisciculture durable
+    à Madagascar tout en proposant des produits sains et accessibles.
+  </p>
+</div>
+
+  </section>  <!-- Produits -->  <section id="products">
+    <h2 class="section-title">Nos Produits</h2><div class="card-container">
+  <div class="card">
+    <h3>Tilapia Royal</h3>
+    <p>Poisson frais élevé dans des conditions contrôlées.</p>
+    <div class="product-price">30 000 Ar/kg</div>
+  </div>
+
+  <div class="card">
+    <h3>Carpe Royal</h3>
+    <p>Produit piscicole local de qualité supérieure.</p>
+    <div class="product-price">32 000 Ar/kg</div>
+  </div>
+
+  <div class="card">
+    <h3>Alevins d'une souche 100% pure</h3>
+    <p>Variété Cyprinus carpio & Oreochromis Niloticus.</p>
+	<div class="product-price"> A partir de 250 à 300 Ar/unité</div>
+  </div>
+</div>
+
+  </section>  <!-- Processus -->  <section id="process">
+    <h2 class="section-title">Processus de production</h2><div class="process-steps">
+  <div class="step">
+    <h3>1. Préparation des étangs</h3>
+    <p>Nettoyage et préparation des bassins piscicoles.</p>
+  </div>
+
+  <div class="step">
+    <h3>2. Mise en charge</h3>
+    <p>Introduction des alevins dans les étangs.</p>
+  </div>
+
+  <div class="step">
+    <h3>3. Alimentation</h3>
+    <p>Utilisation de BSF, granulés et provendes.</p>
+  </div>
+
+  <div class="step">
+    <h3>4. Suivi sanitaire</h3>
+    <p>Contrôle de la qualité de l’eau et de la santé des poissons.</p>
+  </div>
+
+  <div class="step">
+    <h3>5. Récolte</h3>
+    <p>Capture et préparation des produits pour la vente.</p>
+  </div>
+</div>
+
+  </section>  <!-- Galerie -->  <section id="gallery">
+    <h2 class="section-title">Galerie</h2><div class="gallery">
+  <img src="images/etang1.jpg" alt="Étang piscicole">
+  <img src="images/poisson1.jpg" alt="Carpe Royal">
+  <img src="images/production.jpg" alt="Production piscicole">
+</div>
+
+  </section>  <!-- Contact -->  <section id="contact">
+    <h2 class="section-title">Contact</h2><div class="contact-box">
+  <p><strong>Téléphone :</strong> +261 38 81 329 64</p>
+  <p><strong>Email :</strong> <a href="mailto:contact.royalfishmada@gmail.com">contact.royalfishmada@gmail.com</a></p>
+  <p><strong>Localisation :</strong> Madagascar</p>
+</div>
+
+  </section>  <footer>
+    <p>© 2026 Royal Fish Mada - Tous droits réservés</p>
+  </footer></body>
+</html>
