@@ -403,16 +403,18 @@
 
         <form id="rfmForm">
             <div style="margin-bottom: 20px;">
-                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Espèce / Souche choisie :</label>
-                <select id="souche" style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; color: #333; outline: none; transition: 0.3s;">
-                    <option value="Tilapia Royal 🐟">Tilapia Royal — Poisson de table / Alevins</option>
-                    <option value="Carpe Royale 🐠">Carpe Royale — Poisson de table / Alevins</option>
+                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Option choisie :</label>
+                <select id="souche" style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; color: #333; outline: none; transition: 0.3s; background-color: #fff;">
+                    <option value="Tilapia de table 🐟">Tilapia de table</option>
+                    <option value="Carpe de table 🐟">Carpe de table</option>
+                    <option value="Alevins Cyprinus 🪱">Alevins Cyprinus (Carpe)</option>
+                    <option value="Alevins Oreochromis 🪱">Alevins Oreochromis (Tilapia)</option>
                 </select>
             </div>
 
             <div style="margin-bottom: 25px;">
-                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Quantité souhaitée (en kg ou nombre d'alevins) :</label>
-                <input type="text" id="quantite" placeholder="Ex: 50 kg ou 200 alevins" required style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none;">
+                <label style="display: block; color: #0b3c5d; font-weight: bold; margin-bottom: 8px; font-size: 14px;">Quantité souhaitée (en kg ou en nombre) :</label>
+                <input type="text" id="quantite" placeholder="Ex: 50 kg ou 3200 alevins" required style="width: 100%; padding: 12px; border: 2px solid #cccccc; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none;">
             </div>
 
             <div style="margin-bottom: 30px; text-align: center;">
@@ -429,12 +431,11 @@
                 🚀 Valider et Envoyer ma Commande
             </button>
         </form>
-    </div>
+		</div>
 	</section>
 
 	<script>
 	function envoyerCommande() {
-		// 1. Récupération des données du formulaire
 		const souche = document.getElementById('souche').value;
 		const quantite = document.getElementById('quantite').value;
 		const canal = document.querySelector('input[name="canal"]:checked').value;
@@ -444,22 +445,24 @@
 			return;
 		}
 
-		// 2. Configuration de vos coordonnées de réception (À MODIFIER AVEC VOS INFOS)
-		const numeroWhatsApp = "261XXXXXXXXX"; // Mettez votre numéro sans le 0 (Ex: 261340000000)
+		// ⚠️ ATTENTION : Remplacez impérativement par votre vrai numéro.
+		// Exemple : si votre numéro est le 034 11 222 33, écrivez "261341122233" (Pas de +, pas de espaces, pas de 0 devant le 34)
+		const numeroWhatsApp = "261388132964"; 
 		const emailAvenir = "contact.royalfishmada@gmail.com";
 
-		// 3. Construction du texte automatique du message
+		// Préparation du texte de commande
 		const sujet = "Nouvelle commande via le site Web RFM";
-		const messageTexte = `Bonjour Royal Fish Mada ! Je souhaite passer une commande via le site web :\n\n• Souche : ${souche}\n• Quantité : ${quantite}\n\nMerci de me recontacter pour finaliser les détails et la livraison.`;
+		const messageTexte = "Bonjour Royal Fish Mada ! Je souhaite passer une commande via le site web :\n\n" +
+							 "• Produit : " + souche + "\n" +
+							 "• Quantité : " + quantite + "\n\n" +
+							 "Merci de me recontacter pour valider la livraison.";
 
-		// 4. Redirection selon le choix du client
 		if (canal === "whatsapp") {
-			// Encodage spécial pour WhatsApp
-			const lienWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messageTexte)}`;
+			// Version universelle de l'URL WhatsApp (marche sur tous les téléphones)
+			const lienWhatsApp = "https://api.whatsapp.com/send?phone=" + numeroWhatsApp + "&text=" + encodeURIComponent(messageTexte);
 			window.open(lienWhatsApp, '_blank');
 		} else {
-			// Encodage spécial pour l'application Mail
-			const lienMail = `mailto:${emailAvenir}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(messageTexte)}`;
+			const lienMail = "mailto:" + emailAvenir + "?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(messageTexte);
 			window.location.href = lienMail;
 		}
 	}
